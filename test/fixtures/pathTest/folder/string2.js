@@ -1,0 +1,1 @@
+window.string += 'loaded'

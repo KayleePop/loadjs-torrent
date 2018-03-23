@@ -1,0 +1,60 @@
+{
+  "name": "loadjs-torrent",
+  "version": "2.1.0",
+  "author": "Kayleepop",
+  "license": "MIT",
+  "description": "An extension of loadjs that supports torrents",
+  "scripts": {
+    "test": "standard && browserify test/*.js | tape-run",
+    "build": "browserify loadjs-torrent.js -s torrentJs | minify > loadjs-torrent.min.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "env"
+          ]
+        }
+      ]
+    ]
+  },
+  "main": "loadjs-torrent.js",
+  "keywords": [
+    "loadjs",
+    "torrent",
+    "webtorrent",
+    "peer",
+    "p2p",
+    "load",
+    "balance"
+  ],
+  "repository": "https://github.com/kayleepop/loadjs-torrent.git",
+  "bugs": {
+    "type": "git",
+    "url": "https://github.com/kayleepop/loadjs-torrent/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-minify": "^0.3.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1",
+    "standard": "^10.0.2",
+    "tape": "^4.6.3",
+    "tape-run": "^3.0.1",
+    "uglify-js": "^3.0.13"
+  },
+  "dependencies": {
+    "electron": "^1.8.4",
+    "glob-to-regexp": "^0.3.0",
+    "loadjs": "^3.5.3",
+    "webtorrent": "^0.98.18"
+  },
+  "standard": {
+    "ignore": [
+      "test/fixtures/"
+    ]
+  }
+}
