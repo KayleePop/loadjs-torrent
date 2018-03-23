@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/KayleePop/loadjs-torrent.svg)](https://greenkeeper.io/)
 
-[![Build Status](https://travis-ci.org/kayleepop/loadjs-torrent.svg?branch=master)](https://travis-ci.org/kayleepop/loadjs-torrent)
+[![Build Status](https://travis-ci.org/KayleePop/loadjs-torrent.svg?branch=master)](https://travis-ci.org/KayleePop/loadjs-torrent)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/v/loadjs-torrent.svg)](https://www.npmjs.com/package/loadjs-torrent)
 
