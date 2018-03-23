@@ -41,14 +41,14 @@
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^16.1.1",
-    "standard": "^10.0.2",
+    "standard": "^11.0.1",
     "tape": "^4.6.3",
     "tape-run": "^3.0.1",
     "uglify-js": "^3.0.13"
   },
   "dependencies": {
     "electron": "^1.8.4",
-    "glob-to-regexp": "^0.3.0",
+    "glob-to-regexp": "^0.4.0",
     "loadjs": "^3.5.3",
     "webtorrent": "^0.98.18"
   },
