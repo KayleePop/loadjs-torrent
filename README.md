@@ -34,7 +34,7 @@ torrentJs(magnetLink)
     // error handling
   })
 ```
-Or use the minified file from this directory
+Or use the minified file from this repository
 ```html
 <script src="https://cdn.rawgit.com/KayleePop/loadjs-torrent/fd181c6d/loadjs-torrent.min.js"></script>
 <script>
