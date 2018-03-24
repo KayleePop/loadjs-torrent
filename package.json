@@ -6,7 +6,7 @@
   "description": "An extension of loadjs that supports torrents",
   "scripts": {
     "test": "standard && browserify test/*.js | tape-run",
-    "build": "browserify loadjs-torrent.js -s torrentJs | minify > loadjs-torrent.min.js"
+    "build": "browserify -t [ babelify --presets [ env ] ] loadjs-torrent.js -s torrentJs | minify > loadjs-torrent.min.js"
   },
   "browserify": {
     "transform": [
