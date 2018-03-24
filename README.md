@@ -6,7 +6,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/v/loadjs-torrent.svg)](https://www.npmjs.com/package/loadjs-torrent)
 
-<img src="https://i.imgur.com/iTlF4Y7.png" width="300px">
+<img src="icon.png" width="300px">
 
 An extension of [LoadJS](https://github.com/muicss/loadjs) that uses torrents instead of http links.
 
