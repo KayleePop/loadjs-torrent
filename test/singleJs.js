@@ -1,5 +1,5 @@
-import torrentJs from '../loadjs-torrent'
-import test from 'tape'
+const torrentJs = require('../loadjs-torrent')
+const test = require('tape')
 
 test('Single Js file should be correctly loaded', (t) => {
   t.plan(1)

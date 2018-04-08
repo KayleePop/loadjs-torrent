@@ -1,6 +1,6 @@
-import torrentJs from '../loadjs-torrent'
-import test from 'tape'
-import WebTorrent from 'webtorrent'
+const torrentJs = require('../loadjs-torrent')
+const test = require('tape')
+const WebTorrent = require('webtorrent')
 
 test('only the one file specified by path option is loaded', (t) => {
   t.plan(1)
