@@ -1,7 +1,7 @@
-let loadjs = require('loadjs')
-let WebTorrent = require('webtorrent')
-let glob = require('glob-to-regexp')
-let idbStore = require('indexeddb-chunk-store')
+const loadjs = require('loadjs')
+const WebTorrent = require('webtorrent')
+const glob = require('glob-to-regexp')
+const idbStore = require('indexeddb-chunk-store')
 
 let torrentJs = (torrentLink, opts) => {
   if (!opts) opts = {}
