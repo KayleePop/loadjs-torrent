@@ -6,20 +6,8 @@
   "description": "An extension of loadjs that supports torrents",
   "scripts": {
     "test": "standard && browserify test/*.js | tape-run",
-    "build": "browserify -t [ babelify --presets [ env ] ] loadjs-torrent.js -s torrentJs | minify > loadjs-torrent.min.js",
+    "build": "browserify loadjs-torrent.js -s torrentJs | minify > loadjs-torrent.min.js",
     "seed": "webtorrent-hybrid seed test/fixtures/bodyColor.css test/fixtures/multiple test/fixtures/pathTest test/fixtures/syncTest test/fixtures/windowString.js"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "env"
-          ]
-        }
-      ]
-    ]
   },
   "main": "loadjs-torrent.js",
   "keywords": [
@@ -45,9 +33,6 @@
     "webtorrent-hybrid": "^1.0.6"
   },
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babelify": "^8.0.0",
     "glob-to-regexp": "^0.4.0",
     "indexeddb-chunk-store": "^2.2.1",
     "loadjs": "^3.5.3",
