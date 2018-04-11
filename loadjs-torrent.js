@@ -17,10 +17,10 @@ let torrentJs = (torrentLink, opts) => {
       client.add(torrentLink, {store: idbStore}, loadFile)
     }
 
-    client.on('error', (err) => reject(new Error('fatal webtorrent client error: ' + err)))
+    client.on('error', (err) => reject(err))
 
     function loadFile (torrent) {
-      torrent.on('error', (err) => reject(new Error('fatal webtorrent torrent error: ' + err)))
+      torrent.on('error', (err) => reject(err))
 
       let filesToLoad = torrent.files.filter((file) => {
         // only set rootDir if the file in in a directory
@@ -56,7 +56,7 @@ let torrentJs = (torrentLink, opts) => {
               resolveFile(fileUrl)
             } else {
               cbObject.success = () => { resolveFile() }
-              cbObject.error = (err) => { rejectFile(new Error(err)) }
+              cbObject.error = (err) => { rejectFile(err) }
               loadjs(fileUrl, cbObject)
             }
           })
@@ -67,7 +67,7 @@ let torrentJs = (torrentLink, opts) => {
         .then((fileUrls) => {
           if (!opts.async) {
             cbObject.success = () => { resolve() }
-            cbObject.error = (err) => { reject(new Error(err)) }
+            cbObject.error = (err) => { reject(err) }
             loadjs(fileUrls, cbObject)
           } else {
             resolve()
