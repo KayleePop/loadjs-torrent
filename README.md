@@ -36,7 +36,7 @@ torrentJs(magnetLink)
 ```
 Or use the minified file from this repository
 ```html
-<script src="https://cdn.rawgit.com/KayleePop/loadjs-torrent/44eec849/loadjs-torrent.min.js"></script>
+<script src="https://cdn.rawgit.com/KayleePop/loadjs-torrent/4543039b/loadjs-torrent.min.js"></script>
 <script>
 // magnet link to individual css/js file or torrent folder
 let magnetLink = 'magnet:?xt=urn:btih:0067a9ede2fa07e9d0374713bd4621b447292c62&dn=windowString.js&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openWebTorrent.com'
