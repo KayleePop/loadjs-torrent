@@ -2,9 +2,7 @@ const loadjs = require('loadjs')
 const WebTorrent = require('webtorrent')
 const glob = require('glob-to-regexp')
 
-module.exports = (torrentLink, opts) => {
-  if (!opts) opts = {}
-
+module.exports = (torrentLink, opts = {}) => {
   let client = opts.client || new WebTorrent()
 
   return new Promise((resolve, reject) => {
