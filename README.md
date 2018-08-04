@@ -17,7 +17,7 @@ Users will download assets via WebTorrent, and seed those files immediately. Thi
 
 # Usage
 ```javascript
-import torrentJs from 'loadjs-torrent'
+let torrentJs = require('loadjs-torrent')
 
 // magnet link to individual css/js file or torrent folder
 let magnetLink = 'magnet:?xt=urn:btih:0067a9ede2fa07e9d0374713bd4621b447292c62&dn=windowString.js&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openWebTorrent.com'
@@ -108,7 +108,7 @@ Creating a new WebTorrent client for every file creates unecessary overhead, so 
 
 ##### Example:
 ```javascript
-import WebTorrent from 'webtorrent'
+let WebTorrent = require('webtorrent')
 let torrentClient = new WebTorrent()
 
 torrentJs(magnetLink, {path: 'script.js', client: torrentClient})
