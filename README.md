@@ -76,7 +76,7 @@ opts contains these defaults:
 ##### Default: `'/**'`
 A glob pattern matching the files you wish to load from the torrent. Only .js and .css files that match the glob will be loaded, other filetypes and un-matched files will be ignored.
 
-Un-matched files will be downloaded and seeded with rarest first priority, but matched files will be highly prioritized.
+Matched files will be highly prioritized, but other files in the torrent will also be downloaded and seeded.
 
 ##### Examples:
 ```javascript
