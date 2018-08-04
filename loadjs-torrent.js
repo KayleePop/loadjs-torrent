@@ -3,10 +3,10 @@ const WebTorrent = require('webtorrent')
 const glob = require('glob-to-regexp')
 
 module.exports = (torrentLink, opts = {}) => {
-  let client = opts.client || new WebTorrent()
+  const client = opts.client || new WebTorrent()
 
   return new Promise((resolve, reject) => {
-    let existingTorrent = client.get(torrentLink) // null if it doesn't exist
+    const existingTorrent = client.get(torrentLink) // null if it doesn't exist
 
     if (existingTorrent) {
       loadFile(existingTorrent)
@@ -19,14 +19,14 @@ module.exports = (torrentLink, opts = {}) => {
     function loadFile (torrent) {
       torrent.on('error', (err) => reject(err))
 
-      let filesToLoad = torrent.files.filter((file) => {
+      const filesToLoad = torrent.files.filter((file) => {
         // only set rootDir if the file in in a directory
-        let rootDir = /\//.test(file.path) ? (torrent.name + '/') : ''
+        const rootDir = /\//.test(file.path) ? (torrent.name + '/') : ''
 
         let globPath = '**' // default glob is matching everything
         if (opts.path) globPath = opts.path.replace(/^\//, '') // remove initial / if present
 
-        let matchesGlob = glob(rootDir + globPath, {globstar: true}).test(file.path)
+        const matchesGlob = glob(rootDir + globPath, {globstar: true}).test(file.path)
         return matchesGlob && /\.css$|\.js$/.test(file.name) // only match .css and .js files
       })
 
@@ -35,12 +35,12 @@ module.exports = (torrentLink, opts = {}) => {
       }
 
       // callback object to pass into loadjs
-      let cbObject = {
+      const cbObject = {
         async: opts.async,
         before: opts.before
       }
 
-      let filePromises = filesToLoad.map((file) => {
+      const filePromises = filesToLoad.map((file) => {
         return new Promise((resolveFile, rejectFile) => { // eslint-disable-line
           file.getBlobURL((err, fileUrl) => {
             if (err) reject(new Error(err))
