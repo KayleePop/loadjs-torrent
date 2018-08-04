@@ -34,9 +34,8 @@
   },
   "dependencies": {
     "glob-to-regexp": "^0.4.0",
-    "indexeddb-chunk-store": "^2.2.1",
     "loadjs": "^3.5.3",
-    "webtorrent": "^0.101.0"
+    "webtorrent": "https://github.com/KayleePop/webtorrent/tarball/idbkv-chunk-store"
   },
   "standard": {
     "ignore": [

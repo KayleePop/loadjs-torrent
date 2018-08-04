@@ -1,7 +1,6 @@
 const loadjs = require('loadjs')
 const WebTorrent = require('webtorrent')
 const glob = require('glob-to-regexp')
-const idbStore = require('indexeddb-chunk-store')
 
 let torrentJs = (torrentLink, opts) => {
   if (!opts) opts = {}
@@ -14,7 +13,7 @@ let torrentJs = (torrentLink, opts) => {
     if (existingTorrent) {
       loadFile(existingTorrent)
     } else {
-      client.add(torrentLink, {store: idbStore}, loadFile)
+      client.add(torrentLink, loadFile)
     }
 
     client.on('error', (err) => reject(err))
