@@ -6,12 +6,13 @@ module.exports = (torrentLink, opts = {}) => {
   const client = opts.client || new WebTorrent()
 
   return new Promise((resolve, reject) => {
-    const existingTorrent = client.get(torrentLink) // null if it doesn't exist
+    const torrent = client.get(torrentLink) || client.add(torrentLink)
 
-    if (existingTorrent) {
-      loadFile(existingTorrent)
+    // wait for metadata before using files
+    if (torrent.metadata) {
+      loadFile(torrent)
     } else {
-      client.add(torrentLink, loadFile)
+      torrent.on('metadata', () => loadFile(torrent))
     }
 
     client.on('error', (err) => reject(err))
