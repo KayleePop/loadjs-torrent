@@ -2,7 +2,7 @@ const loadjs = require('loadjs')
 const WebTorrent = require('webtorrent')
 const glob = require('glob-to-regexp')
 
-let torrentJs = (torrentLink, opts) => {
+module.exports = (torrentLink, opts) => {
   if (!opts) opts = {}
 
   let client = opts.client || new WebTorrent()
@@ -76,5 +76,3 @@ let torrentJs = (torrentLink, opts) => {
     }
   })
 }
-
-module.exports = torrentJs
