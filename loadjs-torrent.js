@@ -43,7 +43,7 @@ module.exports = async function (torrentLink, opts = {}) {
   const fileUrlPromises = filesToLoad.map(file => {
     return new Promise((resolve, reject) => {
       file.getBlobURL((err, fileUrl) => {
-        if (err) reject(err)
+        if (err) return reject(err)
 
         if (/\.css$/.test(file.name)) {
           fileUrl = 'css!' + fileUrl
