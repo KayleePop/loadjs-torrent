@@ -37,7 +37,7 @@ module.exports = async function (torrentLink, opts = {}) {
   })
 
   if (filesToLoad.length < 1) {
-    throw new Error('no JS or CSS files found ' + (opts.path ? ('matching this glob: ' + opts.path) : 'in torrent'))
+    throw new Error(`no JS or CSS files found ${opts.path ? `matching this glob: ${opts.path}` : 'in torrent'}`)
   }
 
   const fileUrlPromises = filesToLoad.map(file => {
