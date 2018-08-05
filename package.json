@@ -5,9 +5,8 @@
   "license": "MIT",
   "description": "An extension of loadjs that supports torrents",
   "scripts": {
-    "test": "standard && browserify test/*.js | tape-run",
-    "build": "browserify loadjs-torrent.js -s torrentJs | minify > loadjs-torrent.min.js",
-    "seed": "webtorrent-hybrid seed test/fixtures/bodyColor.css test/fixtures/multiple test/fixtures/pathTest test/fixtures/syncTest test/fixtures/windowString.js"
+    "test": "standard && browserify test/*.js | tape-run --static test/fixtures",
+    "build": "browserify loadjs-torrent.js -s torrentJs | minify > loadjs-torrent.min.js"
   },
   "main": "loadjs-torrent.js",
   "keywords": [
@@ -30,8 +29,7 @@
     "tape-promise": "^3.0.0",
     "tape": "^4.9.1",
     "standard": "^11.0.1",
-    "tape-run": "^4.0.0",
-    "webtorrent-hybrid": "^1.0.6"
+    "tape-run": "^4.0.0"
   },
   "dependencies": {
     "glob-to-regexp": "^0.4.0",

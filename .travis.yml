@@ -10,7 +10,6 @@ install:
   - npm install
 before_script:
   - greenkeeper-lockfile-update
-  - npm run seed &
 after_script: greenkeeper-lockfile-upload
 language: node_js
 node_js: node
