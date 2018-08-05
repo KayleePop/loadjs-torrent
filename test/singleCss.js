@@ -1,16 +1,11 @@
 const torrentJs = require('../loadjs-torrent')
-const test = require('tape')
+const test = require('tape-promise/tape')
 const magnetLinks = require('./shared/magnetLinks.js')
 
-test('single css file should be correctly loaded', (t) => {
-  t.plan(1)
-
+test('single css file should be correctly loaded', async (t) => {
   document.querySelector('body').style = {}
 
-  torrentJs(magnetLinks.bodyColor)
-    .then(() => {
-      let color = window.getComputedStyle(document.body).getPropertyValue('background-color')
-      t.equals(color, 'rgb(85, 107, 47)')
-    })
-    .catch((err) => t.fail(err.message))
+  await torrentJs(magnetLinks.bodyColor)
+  let color = window.getComputedStyle(document.body).getPropertyValue('background-color')
+  t.equals(color, 'rgb(85, 107, 47)')
 })
