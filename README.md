@@ -57,7 +57,7 @@ torrentJs(magnetLink)
 
 # API
 
-## `torrentJs(magnetLink, opts)`
+## `async torrentJs(magnetLink, opts)`
 #### Returns:
 A Promise that resolves on successful loading of all files
 
@@ -91,20 +91,20 @@ torrentJs(magnetlink, {path: '/dir/**'}) // loads all JS and CSS from dir
 ##### Default: `true`
 A boolean stating whether execution order matters for the loaded scripts.
 
-If true, scripts will be loaded as soon as they are downloaded and the `async` attribute will be applied, like this:
+If true, scripts will be loaded in the order that they finish downloading, and the `async` attribute will be applied, like this:
 ```html
 <script src="..." async></script>
 ```
 
-If false, scripts will be loaded all together once they are all finished downloading and will execute in order without the async attribute.
+If false, scripts will be loaded in order as each one finishes downloading and will execute in order without the async attribute. If one script takes a very long time to load, then it will block the scripts after it but not before it.
 
-The order of files and directories in a torrent can be customized on creation with a Bittorrent client. This is possible with Vuze.
+The order is based on the torrent, and it can be customized on creation with a Bittorrent client. Custom ordering is possible with Vuze.
 
 ## Client
 ##### Default: `new WebTorrent()`
 The WebTorrent client instance to use.
 
-Creating a new WebTorrent client for every file creates unecessary overhead, so you can pass in an existing one for torrentJs to use instead.
+Creating a new WebTorrent client for every file creates unnecessary overhead, so you can pass in an existing one for torrentJs to use instead.
 
 ##### Example:
 ```javascript
@@ -124,7 +124,7 @@ A function that is passed directly into loadjs. It executes just before the scri
 
 [See the loadjs docs for more info](https://github.com/muicss/loadjs#documentation)
 
-The path param is currently unusable, because a blobUrl is passed into loadjs.
+The path param will be a blobUrl pointing to the downloaded file.
 
 
 ## Feel free to open an issue with questions
