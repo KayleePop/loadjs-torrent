@@ -1,7 +1,7 @@
 const loadjs = require('loadjs')
 const WebTorrent = require('webtorrent')
 const IdbkvChunkStore = require('idbkv-chunk-store')
-const glob = require('glob-to-regexp')
+const globToRegex = require('glob-to-regexp')
 
 const loadjsPromise = function (fileUrl, cbObject = {}) {
   return new Promise((resolve, reject) => {
@@ -33,7 +33,7 @@ module.exports = async function (torrentLink, opts = {}) {
     let globPath = '**' // default glob is matching everything
     if (opts.path) globPath = opts.path.replace(/^\//, '') // remove initial / if present
 
-    const matchesGlob = glob(rootDir + globPath, {globstar: true}).test(file.path)
+    const matchesGlob = globToRegex(rootDir + globPath, {globstar: true}).test(file.path)
     return matchesGlob && /\.css$|\.js$/.test(file.name) // only match .css and .js files
   })
 
