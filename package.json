@@ -1,6 +1,6 @@
 {
   "name": "loadjs-torrent",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Kayleepop",
   "license": "MIT",
   "description": "An extension of loadjs that supports torrents",
