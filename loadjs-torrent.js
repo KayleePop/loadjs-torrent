@@ -1,5 +1,6 @@
 const loadjs = require('loadjs')
 const WebTorrent = require('webtorrent')
+const IdbkvChunkStore = require('idbkv-chunk-store')
 const glob = require('glob-to-regexp')
 
 const loadjsPromise = function (fileUrl, cbObject = {}) {
@@ -13,7 +14,7 @@ const loadjsPromise = function (fileUrl, cbObject = {}) {
 module.exports = async function (torrentLink, opts = {}) {
   const client = opts.client || new WebTorrent()
 
-  const torrent = client.get(torrentLink) || client.add(torrentLink)
+  const torrent = client.get(torrentLink) || client.add(torrentLink, {store: IdbkvChunkStore})
 
   client.on('error', (err) => { throw err })
   torrent.on('error', (err) => { throw err })
