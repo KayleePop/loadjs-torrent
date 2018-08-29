@@ -10,7 +10,7 @@ test('Error callback should be called on invalid path', async (t) => {
   delete window.string
 
   try {
-    await torrentJs(magnetLinks.pathTest, {client: client, path: '/invalid'})
+    await torrentJs(magnetLinks.pathTest, { client: client, path: '/invalid' })
     t.fail('error should be caught')
   } catch (err) {
     t.equals(err.message, 'no JS or CSS files found matching this glob: /invalid')

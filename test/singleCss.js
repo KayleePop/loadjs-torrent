@@ -9,7 +9,7 @@ test('single css file should be correctly loaded', async (t) => {
 
   document.querySelector('body').style = {}
 
-  await torrentJs(magnetLinks.bodyColor, {client: client})
+  await torrentJs(magnetLinks.bodyColor, { client: client })
   let color = window.getComputedStyle(document.body).getPropertyValue('background-color')
   t.equals(color, 'rgb(85, 107, 47)')
   await destroyClient(client)

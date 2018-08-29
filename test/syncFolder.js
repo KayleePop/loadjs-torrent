@@ -9,7 +9,7 @@ test('folders loaded with async:false should load in order', async (t) => {
 
   delete window.string
 
-  await torrentJs(magnetLinks.syncTest, {client: client, async: false})
+  await torrentJs(magnetLinks.syncTest, { client: client, async: false })
   t.equals(window.string, 'first file loaded, and the second too')
   await destroyClient(client)
 })

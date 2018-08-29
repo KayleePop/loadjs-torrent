@@ -9,7 +9,7 @@ test('Single Js file should be correctly loaded', async (t) => {
 
   delete window.test
 
-  await torrentJs(magnetLinks.windowString, {client: client})
+  await torrentJs(magnetLinks.windowString, { client: client })
   t.equals(window.test, 'torrent load success')
   await destroyClient(client)
 })

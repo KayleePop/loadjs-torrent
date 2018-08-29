@@ -11,7 +11,7 @@ test('css and js files (and only css and js) should be loaded correctly from a t
   delete window.imageTest
   document.querySelector('body').style = {}
 
-  await torrentJs(magnetLinks.multiple, {client: client})
+  await torrentJs(magnetLinks.multiple, { client: client })
   t.equals(window.multipleTest, 'folder load success')
   let color = window.getComputedStyle(document.body).getPropertyValue('background-color')
   t.equals(color, 'rgb(205, 92, 92)')

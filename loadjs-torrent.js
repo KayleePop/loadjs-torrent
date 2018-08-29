@@ -14,7 +14,7 @@ const loadjsPromise = function (fileUrl, cbObject = {}) {
 module.exports = async function (torrentLink, opts = {}) {
   const client = opts.client || new WebTorrent()
 
-  const torrent = client.get(torrentLink) || client.add(torrentLink, {store: IdbkvChunkStore})
+  const torrent = client.get(torrentLink) || client.add(torrentLink, { store: IdbkvChunkStore })
 
   client.on('error', (err) => { throw err })
   torrent.on('error', (err) => { throw err })
@@ -33,7 +33,7 @@ module.exports = async function (torrentLink, opts = {}) {
     let globPath = '**' // default glob is matching everything
     if (opts.path) globPath = opts.path.replace(/^\//, '') // remove initial / if present
 
-    const matchesGlob = globToRegex(rootDir + globPath, {globstar: true}).test(file.path)
+    const matchesGlob = globToRegex(rootDir + globPath, { globstar: true }).test(file.path)
     return matchesGlob && /\.css$|\.js$/.test(file.name) // only match .css and .js files
   })
 
