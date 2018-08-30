@@ -35,7 +35,7 @@
     "glob-to-regexp": "^0.4.0",
     "idbkv-chunk-store": "^1.0.2",
     "loadjs": "^3.5.3",
-    "webtorrent": "https://github.com/KayleePop/webtorrent/tarball/idbkv-chunk-store"
+    "webtorrent": "^0.102.3"
   },
   "standard": {
     "ignore": [
