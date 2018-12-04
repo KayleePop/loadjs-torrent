@@ -5,6 +5,15 @@ const test = require('muggle-test')
 const assert = require('muggle-assert')
 
 const destroyClient = async (client) => {
+  // stop connections and event emitters
+  await new Promise((resolve, reject) => {
+    client.destroy((err) => {
+      if (err) reject(err)
+
+      resolve()
+    })
+  })
+
   // clear store
   if (client.torrents[0] && client.torrents[0].store) {
     await new Promise((resolve, reject) => {
@@ -15,15 +24,6 @@ const destroyClient = async (client) => {
       })
     })
   }
-
-  // stop connections and event emitters
-  await new Promise((resolve, reject) => {
-    client.destroy((err) => {
-      if (err) reject(err)
-
-      resolve()
-    })
-  })
 }
 
 test('single css file should be correctly loaded', async () => {
