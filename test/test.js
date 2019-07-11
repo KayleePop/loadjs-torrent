@@ -33,7 +33,7 @@ test('single css file should be correctly loaded', async () => {
   document.querySelector('body').style = {}
 
   await torrentJs(magnetLinks.bodyColor, { client: client })
-  let color = window.getComputedStyle(document.body).getPropertyValue('background-color')
+  const color = window.getComputedStyle(document.body).getPropertyValue('background-color')
   assert.equal(color, 'rgb(85, 107, 47)')
 
   await destroyClient(client)
@@ -133,7 +133,7 @@ test('css and js files (and only css and js) should be loaded correctly from a t
 
   assert.equal(window.multipleTest, 'folder load success')
 
-  let color = window.getComputedStyle(document.body).getPropertyValue('background-color')
+  const color = window.getComputedStyle(document.body).getPropertyValue('background-color')
   assert.equal(color, 'rgb(205, 92, 92)')
 
   assert.equal(window.imageTest, undefined, 'javascript file with image extension should not be loaded')
