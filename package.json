@@ -24,7 +24,7 @@
     "url": "https://github.com/kayleepop/loadjs-torrent/issues"
   },
   "devDependencies": {
-    "babel-minify": "^0.5.0",
+    "babel-minify": "^0.5.1",
     "browserify": "^16.1.1",
     "muggle-assert": "^1.0.0",
     "muggle-test": "^1.0.0",
